@@ -2,14 +2,13 @@ import { useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { GameContentItem, MCQ, Flashcard, FillInTheBlank, MiniQuiz } from '@/types/game'
-import { CheckCircle2, XCircle, RotateCcw, ChevronLeft, ChevronRight } from 'lucide-react'
+import { CheckCircle2, XCircle, RotateCcw } from 'lucide-react'
 
 interface GameContentProps {
   content: GameContentItem[]
 }
 
 export function GameContent({ content }: GameContentProps) {
-  const [flashcardIndex, setFlashcardIndex] = useState<{ [key: number]: number }>({})
   const [flashcardFlipped, setFlashcardFlipped] = useState<{ [key: number]: boolean }>({})
   const [mcqAnswers, setMcqAnswers] = useState<{ [key: number]: number | null }>({})
   const [fillAnswers, setFillAnswers] = useState<{ [key: string]: string }>({})
