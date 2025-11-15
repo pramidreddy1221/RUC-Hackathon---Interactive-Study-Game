@@ -45,7 +45,7 @@ export function LevelOnePage() {
   const handleComplete = async () => {
     try {
       setIsLoading(true)
-      await callNextLevelWebhook('1')
+      await callNextLevelWebhook(2)
       navigate('/level-2')
     } catch (error) {
       console.error('Error calling next level webhook:', error)

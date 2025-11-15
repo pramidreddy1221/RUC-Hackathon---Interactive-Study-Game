@@ -154,10 +154,10 @@ export async function sendTextToN8N(text: string): Promise<N8NResponse> {
   try {
     console.log('Sending text to n8n webhook:', N8N_WEBHOOK_URL)
     console.log('Text length:', text.length, 'characters')
+    const data = { "text": text,"level":1,"timestamp":new Date().toISOString() }
     
     const response = await axios.post(N8N_WEBHOOK_URL, {
-      text,
-      timestamp: new Date().toISOString(),
+      data
     }, {
       headers: {
         'Content-Type': 'application/json',
